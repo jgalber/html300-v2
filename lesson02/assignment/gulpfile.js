@@ -59,7 +59,8 @@ function browserSync() {
             baseDir: './'
         },
         notify: false,
-        browser: "google chrome"
+        // changed the browser value to chrome.exe
+        browser: "Chrome"
     });
 }
 

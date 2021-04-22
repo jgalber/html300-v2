@@ -1,0 +1,55 @@
+// $layout-breakpoint-small: 360px;
+
+// @media (min-width: $layout-breakpoint-small) {
+//   .hide-extra-small {
+//     display: none;
+//   }
+// }
+@mixin responsive($breakpoint) {
+    @if $breakpoint == smallPhones {
+        @media only screen and (max-width: 300px) {
+            @content;
+        }
+    }
+    @if $breakpoint == phone {
+        @media only screen and (min-width: 300px) {
+            @content;
+        }
+    }
+    @if $breakpoint == tablet {
+        @media only screen and (min-width: 525px) and (max-width: 650px) {
+            @content;
+        }
+    }
+    @if $breakpoint == tabletLarge {
+        @media only screen and (min-width: 650px) and (max-width: 768px) {
+            @content;
+        }
+    }
+    @if $breakpoint == desktop {
+        @media only screen and (min-width: 768px) and (max-width: 1024px) {
+            @content;
+        }
+    }
+    @if $breakpoint == xl {
+        @media only screen and (min-width: 1024px) {
+            @content;
+        }
+    }
+}
+    // @if $breakpoint == tablet {
+    //     @media only screen and (min-width: 500px) {@content};
+    //     }
+    // @if $breakpoint == laptop {
+    //     @media only screen and (max-width: 600px) {@content};
+    //     }
+    // @if $breakpoint == pc { 
+    //     @media only screen and (max-width: 600px) {@content};
+    //     }
+
+
+@include responsive(phone) { }
+
+@include responsive(tablet) { }
+
+@include responsive(tabletLarge) { }
