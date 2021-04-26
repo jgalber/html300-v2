@@ -1,17 +1,254 @@
+
 html {
     box-sizing: border-box;
+    font-family: sans-serif;
+    -webkit-text-size-adjust: 100%;
 }
 
-*,
-*:after,
-*:before {
-    box-sizing: inherit;
-}
+// *,
+// *:after,
+// *:before {
+//     box-sizing: inherit;
+//     margin: inherit;
+//     padding: inherit;
+// }
 
-.main {
-    padding: 2rem;
-}
 
-h1 {
-    color: $red;  
-}
+// Nesting result
+// .card is the container of the entire page
+.card {
+    border: $extra-thin $white-bg;
+
+    // media queries 
+    @include responsive(phone) {
+        @include flex-column;
+    }
+    @include responsive(tablet) {
+        border: $thin-border $white-bg;
+    }
+    @include responsive(tabletLarge) {
+        border: $medium-border $white-bg;
+    }
+    @include responsive(desktop) {
+        border: $medium-border $white-bg;
+    }
+    @include responsive(xl) {
+        border: $large-border $white-bg;
+    }
+
+    // .card-body contains two sub-containers called 'left-side' and 'right-side'
+    .card-body {
+        border: $thin-border $outer-gray;
+        @include flex-column;
+
+        // media queries
+        @include responsive(tablet) {
+            @include grid-two-columns;
+            border: $medium-border $outer-gray;
+        }
+        @include responsive(tabletLarge) {
+            @include grid-tabletLarge;
+            border: $medium-border $outer-gray;
+        }
+        @include responsive(desktop) {
+            @include grid-tabletLarge;
+            border: $large-border $outer-gray;
+        }
+        @include responsive(xl) {
+            @include grid-tabletLarge;
+            border: $large-border $outer-gray;
+        }
+        
+        // '.left-side' contains three items: the profile picture, and two headings
+        .left-side {
+            @extend .card-body;
+            border: none;
+            align-items: center;
+            margin: $margin-small $zero;
+
+            // media queries
+            @include responsive(tablet) {
+                grid-column: 1 / 2;
+                @include flex-column;
+                margin: $margin-small;
+                align-content: space-evenly;
+            }
+            @include responsive(tabletLarge) {
+                grid-column: 1 / 3;
+                @include grid-two-columns;
+                align-content: space-evenly;
+            }
+            @include responsive(desktop) {
+                @include grid-tabletLarge;
+                grid-column: 1 / 3;
+                align-content: space-evenly;
+            }
+            @include responsive(xl) {
+                grid-column: 1 / 3;
+                margin: $margin-height-large;
+                align-content: space-evenly;
+            }
+
+            // Profile picture
+            .card-img {
+                width: 75%;
+                border-radius: 50%;
+                max-width: 100%;
+
+                // media queries
+                @include responsive (tabletLarge) {
+                        grid-row: 1 / 3;
+                        margin: $center;
+                }
+                @include responsive(desktop) {
+                    grid-column: 1 / 3;
+                    grid-row: 1 / 3;
+                    margin: $center;
+                }
+                @include responsive(xl) {
+                    grid-column: 1 / 3;
+                    grid-row: 1 / 3;
+                }
+            }
+
+            // h1 with a class selector called '.card-title'
+            .card-title {
+                text-align: center;
+                color: $main-font;
+                margin-bottom: $zero;
+
+                // media queries
+                @include responsive (tabletLarge) {
+                    grid-column: 2 / 3;
+                    grid-row: 1;
+                }
+                @include responsive(desktop) {
+                    grid-column: 3 / 5;
+                    align-self: end;
+                }
+                @include responsive(xl) {
+                   grid-column: 3 / 5;
+                   align-self: end;
+               }
+            }
+            
+            // h2 with a class selector called '.card-subtitle'
+            .card-subtitle {
+                @extend .card-title;
+                margin: $zero;
+                color: $second-font;
+                font-style: italic;
+
+                // media queries
+                @include responsive(tabletLarge) {
+                    grid-column: 2 / 3;
+                    grid-row: 2;
+                }
+                @include responsive(desktop) {
+                    grid-column: 3 / 5;
+                    grid-row: 2;
+                    align-self: baseline;
+                }
+                @include responsive(xl) {
+                    grid-column: 3 / 5;
+                    align-self: baseline;
+                }
+            }   
+        }
+
+
+        // This is a div with two class selectors: '.card-list' and '.right-side'
+        // '.card-list' was mainly used for testing purposes
+        .card-list {
+            margin: $small;
+        }
+
+        // '.right-side' contains an unordered list with includes an .svg file
+        .right-side {
+            background-color: $list-gray-bg;
+
+            // media queries
+            @include responsive(tablet) {
+                grid-column: 2 / 3;
+                @include flex-column;
+            }
+            @include responsive(tabletLarge) {
+                grid-column: 3 / 5;
+            }
+            @include responsive(desktop) {
+                grid-column: 3 / 5;
+            }
+            @include responsive(xl) {
+                margin: $margin-height-large;
+                grid-column: 3 / 5;
+            }
+
+            // '.list-group' is the class selector of the 'ul'
+            .list-group {
+                list-style-type: none;
+                @include flex-column;
+                padding: $zero;
+                margin: $margin-medium;
+                line-height: $height;
+                
+                // media queries
+                @include responsive(tablet) {
+                    line-height: $margin-height-large;
+                }
+                @include responsive(tabletLarge) {
+                    line-height: $margin-height-large;
+                }
+                @include responsive(desktop) {
+                    line-height: $margin-height-large;
+                }
+                @include responsive(xl) {
+                    line-height: $margin-height-large;
+                    margin: $margin-height-large;
+                }
+
+                // '.list-group-item' targets every list item of the unordered list except the last one
+                .list-group-item {
+                    color: $second-font;
+                }
+                    span {
+                        color: $main-font;
+                        // border: 2px solid blue;
+                        font-weight: bold;
+                        margin: $zero;
+                        }
+                    .email-list {
+                        font-weight: normal;
+                        @extend .list-group-item;
+                    }
+                }
+
+                // This class selector exclusively targets the last element of the list which contains the '.svg' file and different layouts for different breakpoints and viewports
+                .list-group-item-link {
+                    @include flex-align;
+                    margin-top: $margin-medium;
+
+                    // media query
+                    @include responsive (smallPhones) {
+                        @include flex-column;
+                        .email-list {
+                            @include flex-column;
+                            font-size: $small;
+                        }
+                    }
+                    
+                    // '.linkedin-img' is a class selector that belongs to the linkedin logo
+                    .linkedin-img {
+                        margin: $zero;
+                    }
+
+                    // The anchor tag is selected by using a class called 'linkedin-link' 
+                    .linkedin-link {
+                        margin: $zero $extra-small;
+                        color: $main-font;
+                        text-decoration: none;
+                        font-size: $font-small;
+                    }
+                }
+            }         
+        }   
+    }
