@@ -8,9 +8,9 @@
     "email": "paolo@example.com",
     "linkedInUrl": "paolo.linkedinprofile.com",
     "codeLanguages": [
-        "HTML", "CSS", "JavaScript", "Node", "Express"]
-      
-    },
+        "HTML", "CSS", "JavaScript", "Node", "Express"
+    ]  
+  },
   {
     "name": "Barbara Bonansea",
     "jobTitle": "Software Engineer",
@@ -50,13 +50,13 @@
        "HTML", "CSS", "JavaScript", "React", "Vue", "Redux"
     ]
   }
- ];
+];
 
 const devHTML = devJSON.map(function(el) {
   // forEach
   return `
   <div class="main-container">   
-<div class="card">
+    <div class="card">
             <div class="card-body">
             <header class="left-side">
                 <img src="./img/headshot.jpg" class="card-img" alt="Paolo Maldini developer">
@@ -64,7 +64,6 @@ const devHTML = devJSON.map(function(el) {
                 <h2 class="card-subtitle">${el.jobTitle}</h2>
             </header>
 
-        
             <div class="card-list right-side">
                 <ul class="list-group">
                     <li class="list-group-item"><span>Company: </span>${el.company}</li>
@@ -73,15 +72,13 @@ const devHTML = devJSON.map(function(el) {
                     <li class="list-group-item"><span>Major: </span>${el.major}</li>
                     <li class="list-group-item"><span>Email: </span><span class="email-list">${el.email}</span></li>
                     <li class="list-group-item-link"><img src="./img/linkedin.svg" class="linkedin-img" alt="linkedin icon"><a class="linkedin-link" href="https://www.linkedin.com/"><span class="linkedin-list">${el.linkedInUrl}</span></a></li>
+                    <li class="list-group-item"><span>Code Languages: </span>${el.codeLanguages.join(', ')}</li>
                 </ul>     
             </div>  
         </div>
-    //card close here 
     </div>
     </div>
     `;
-    
 });
-
 
 document.querySelector('div.main-container').innerHTML = devHTML;
