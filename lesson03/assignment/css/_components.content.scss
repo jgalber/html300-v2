@@ -5,14 +5,15 @@ html {
     -webkit-text-size-adjust: 100%;
 }
 
-// *,
-// *:after,
-// *:before {
-//     box-sizing: inherit;
-//     margin: inherit;
-//     padding: inherit;
-// }
+// *, *:after, *:before { box-sizing: inherit; margin: inherit; padding: inherit; }
 
+// Basic styles for the h1
+h1 {
+    text-align: center;
+    color: $main-font;
+    margin-top: $margin-height-large;
+    margin-bottom: $margin-small;
+}
 
 // Nesting result
 // .card is the container of the entire page
