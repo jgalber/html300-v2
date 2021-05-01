@@ -1,0 +1,19 @@
+@mixin flex-column {
+    display: flex;
+    flex-direction: column;
+}
+
+@mixin flex-align {
+    display: flex;
+    align-items: center;
+}
+
+@mixin grid-two-columns {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+}
+
+@mixin grid-tabletLarge {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+}

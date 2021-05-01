@@ -46,6 +46,8 @@ function css() {
 
 // On changes to scss or js files, reload the page in browser
 function watchFiles() {
+    watch (paths.html + '*.html')
+        .on('change', browsersync.reload);
     watch(paths.scss + '**/*.scss', parallel(css))
         .on('change', browsersync.reload);
     watch(paths.js + '*.js')
@@ -59,7 +61,7 @@ function browserSync() {
             baseDir: './'
         },
         notify: false,
-        browser: "google chrome"
+        browser: "Chrome"
     });
 }
 

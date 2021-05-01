@@ -1,6 +1,10 @@
 // Import partials here
-@import 'base.normalize';
-@import 'settings.variables';
-@import 'settings.responsive';
+// @import 'base.normalize';
+// @import 'settings.responsive';
+// @import 'settings.variables';
+@import 'normalize';
+@import 'sizes';
+@import 'layouts';
+@import 'palettes';
+@import 'media';
 @import 'components.content';
-
