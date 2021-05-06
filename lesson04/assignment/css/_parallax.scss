@@ -1,0 +1,28 @@
+.Main {
+    &__parallax {
+        @include parallax;
+        background-image: url("../img/anders-jilden-vernazza-unsplash.jpg");
+        height: 100%;
+    }
+
+    .section {
+        // First parallax
+        &__parallax--item1 {
+            @include parallax;
+            background-image: url("../img/osama-elsayed-pyramids-unsplash.jpg");
+            height: 300px;
+        }
+        // Second parallax
+        &__parallax--item2 {
+            @include parallax;
+            background-image: url("../img/evan-sanchez-machu-pichu-unsplash.jpg");
+            height: 300px;
+        }
+        // Third parallax
+        &__parallax--item3 {
+            @include parallax;
+            background-image: url("../img/snowscat-samarkand-unsplash.jpg");
+            height: 300px;
+        }
+    }
+}
