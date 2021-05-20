@@ -1,6 +1,25 @@
 // Import partials here
 @import 'base.normalize';
-@import 'settings.variables';
-@import 'settings.responsive';
-@import 'components.content';
+//@import 'settings.variables';
+// @import 'settings.responsive';
+// @import 'responsive.layouts';
 
+// Partials imported from the previous challenge
+
+
+// Flex, block and other structure elements
+
+// Grid layout partial
+
+@import 'units';
+@import 'fonts';
+@import 'color.palette';
+// Responsive 
+@import 'grid';
+@import 'sections';
+@import 'header';
+// @import 'main';
+@import 'footer';
+@import 'media.queries';
+// Main structure 
+@import 'components.content';

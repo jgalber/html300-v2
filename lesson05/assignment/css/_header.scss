@@ -1,0 +1,263 @@
+// Header responsive layout
+@mixin header-mobile-tablet {
+    @include block;
+    width: 90%;
+}
+@mixin header-tabletL-desktop {
+    @include block;
+    width: 100%;
+}
+
+// Responsive layout different viewports
+@mixin header-responsive {
+    // height: $xxl-rem;
+    @include responsive(phone) {
+        @include header-mobile-tablet;
+    }
+    @include responsive(tablet) {
+        @include header-mobile-tablet;
+    }
+    @include responsive(tabletLarge) {
+        @include header-tabletL-desktop;
+    }
+    @include responsive(tabletXlarge) {
+        @include header-tabletL-desktop;
+    }
+    @include responsive(desktop) {
+        @include header-tabletL-desktop;
+    }
+    @include responsive(desktopLarge) {
+        @include header-tabletL-desktop;
+    }
+}
+
+
+// Header - Background Image 
+@mixin header-bg {
+    display: block;
+    width: 100%;
+    height: fit-content;
+    background-image: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url(../images/annie-spratt-about-unsplash.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: bottom right;
+}
+
+// Main title
+@mixin h1 {
+    font-family: $logo-btn-font;
+    font-size: $xl-font;
+    margin: 0;
+    padding: $header-rem;
+    color: $white;
+    letter-spacing: $xl-pxl;
+    text-align: center;
+    transition: all 1s ease-in-out;
+}
+
+// Hover Main title
+@mixin h1-hover {   
+    letter-spacing: $xs-rem;
+    color:  $hover-logo;
+    text-shadow: $xxs-rem $xxxs-rem $xxs-rem $white;
+}
+
+// Responsive layout different viewports - Main title
+@mixin logo-responsive { 
+    @include responsive(phone) {
+        padding: $xl-rem $lx-rem $m-rem $lx-rem;
+        font-size: $m-font;
+        line-height: $l-rem;
+    }
+    @include responsive(tablet) {
+        padding: $xl-rem $xl-rem $m-rem $xl-rem;
+        font-size: $l-font;
+        line-height: $l-rem;
+    }
+    @include responsive(tabletLarge) {
+        padding: $xl-rem $m-rem $m-rem $m-rem;
+        font-size: $xl-font;
+        line-height: $lx-rem;
+        margin: 0 $l-rem;
+    }
+    @include responsive(tabletXLarge) {
+        padding: $xl-rem $lx-rem $xl-rem $lx-rem;
+        line-height: $xl-rem;
+        margin: 0 $v-rem;
+    }
+    @include responsive(desktop) {
+        line-height: $xl-rem;
+    }
+}
+
+// hamburger settings 
+@mixin hamburger {
+    background-color: transparent;
+    border: none;
+    font-size: $s-font;
+    cursor: pointer;
+    margin: 1rem 0;
+}
+
+// Responsive layout different viewports - Hamburger menu
+@mixin h-menu-responsive {
+    @include responsive(tabletXLarge) {
+            display: none;
+    }
+    @include responsive(desktop) {
+        display: none;
+    }
+    @include responsive(desktopLarge) {
+        display: none;
+    }
+}            
+
+// Ul - navbar settings
+@mixin top-list {
+    font-family: $nav-list-font;
+    background: linear-gradient(360deg, rgb(121, 107, 107), transparent);
+    background-color: transparent;
+    height: fit-content;
+    list-style: none;
+}
+
+// Responsive layout different viewports - UL - navbar
+@mixin h-list-responsive {
+    @include responsive(phone) {
+        @include navbar-mobile;
+        display: none;
+    }
+    @include responsive(tablet) {
+        @include navbar-tablet;
+        display: none;
+    }
+    @include responsive(tabletLarge) {
+        @include navbar-tabletL-desktop;
+        display: none;
+    }
+    @include responsive(tabletXLarge) {
+        @include navbar-tabletL-desktop;
+    }
+    @include responsive(desktop) {
+        @include navbar-tabletL-desktop;
+    }
+    @include responsive(desktopLarge) {
+        @include navbar-tabletL-desktop;
+        justify-content: space-evenly;
+    }
+}
+
+// Navbar
+// Navigation bar mobile 
+@mixin navbar-mobile {
+    display: flex;
+    flex-direction: column;
+}
+
+// Top navbar
+@mixin navbar-tablet {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: 1fr 1fr;
+    @include full-x-fit-y;
+    list-style: none;
+}
+
+
+// Navigation bar from tablet large to desktop
+@mixin navbar-tabletL-desktop {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+}
+
+
+// Responsive layout different viewports - Hamburger menu display  
+@mixin hmenu-show-responsive {
+    @include responsive(phone) {
+        @include block;       
+    }
+    @include responsive(tablet) {
+        @include block;
+    }
+    @include responsive(tabletLarge) {
+        @include block;  
+    }
+}
+
+// Responsive, styling, hover on first list item (navbar)  
+@mixin top-navbar-item-1{
+    padding: $xs-rem 0;
+    @include responsive(tablet) {
+        grid-column: 1;
+        grid-row: 1;
+    }
+    // anchor 1
+    &--anchor1 { 
+        @include navbar-item;    
+        &:hover {
+            letter-spacing: $m-pxl;
+            text-transform: uppercase;
+        }
+    }
+}
+
+// Responsive, styling, hover on second list item (navbar)
+@mixin top-navbar-item-2 {
+    padding: $xs-rem 0;
+    @include responsive(tablet) {
+        grid-column: 2;
+        grid-row: 1;
+    }
+    // anchor 2
+    &--anchor2 {
+        @include navbar-item;
+        &:hover {
+            letter-spacing: $s-pxl;
+            font-style: italic;
+        }
+    }
+}
+
+// Responsive, styling, hover on third list item (navbar)
+@mixin top-navbar-item-3 {
+    padding: $xs-rem 0;
+    @include responsive(tablet) {
+        grid-column: 1;
+        grid-row: 2;
+    }
+    // anchor 3
+    &--anchor3 {
+        @include navbar-item;
+        &:hover {
+            letter-spacing: $xl-pxl;
+        }
+    }
+}
+
+// Responsive, styling, hover on fourth list item (navbar)
+@mixin top-navbar-item-4 {
+    padding: $xs-rem 0;
+    @include responsive(tablet) {
+        grid-column: 2;
+        grid-row: 2;
+    }
+    // anchor 3
+    &--anchor4 {
+        @include navbar-item;
+        &:hover {
+            letter-spacing: $s-pxl;
+            text-transform: uppercase;
+        }
+    }
+}  
+
+// Anchor tags Top Navbar 
+@mixin navbar-item {
+    text-decoration: none;
+    color: $white;
+    font-size: $xs-font;
+    transition: all .5s ease-in-out;
+    cursor: pointer;
+}
