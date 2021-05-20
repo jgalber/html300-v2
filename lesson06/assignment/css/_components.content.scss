@@ -1,5 +1,7 @@
 html {
     box-sizing: border-box;
+    margin: 0;
+    padding: 0;
 }
 
 *,
@@ -9,5 +11,259 @@ html {
 }
 
 .main {
-    padding: 2rem;
+    @include breakpoint(mobile) {
+		display: flex;
+        flex-direction: column;
+        color: $bs-light;
+        font-weight: bold;
+	}
+    @include breakpoint(phablet) {
+		display: flex;
+        flex-direction: column;
+        color: $bs-light;
+        font-weight: bold;
+	}
+    @include breakpoint(tablet) {
+		display: flex;
+        flex-direction: column;
+        color: $bs-light;
+        font-style: italic;
+	}
+    @include breakpoint(desktop) {
+		display: flex;
+        flex-direction: column;
+        color: $bs-light;
+        font-weight: normal;
+        font-style: normal;
+	}
+
 }
+
+.container {
+    
+    @include breakpoint(mobile) {
+        background-color: $bs-pink;
+        padding-top: 2rem;
+        padding-bottom: 2rem;
+    }
+    @include breakpoint(phablet) {
+        background-color: $bs-pink;
+        padding-top: 2rem;
+        padding-bottom: 2rem;
+        max-width: 75%;
+    }
+    @include breakpoint(tablet) {
+        background-color: $bs-cyan;
+    }
+    @include breakpoint(desktop) {
+        background-color: $bs-danger;
+    }
+    
+   
+    &__navbar {
+        @include breakpoint(mobile) {
+            margin-bottom: 1rem;
+        }
+        @include breakpoint(phablet) {
+            margin-bottom: 1rem;
+        }
+    }
+}
+
+div.container {
+    @include breakpoint(phablet) {
+       max-width: 100%; 
+    }
+}
+
+h2 {
+    @include breakpoint(mobile) {
+        color: $bs-cyan;
+    }
+    @include breakpoint(phablet) {
+        color: $bs-cyan;
+    }
+    @include breakpoint(tablet) {
+        color: $bs-pink;
+    }
+    @include breakpoint(tablet) {
+        color: $bs-teal;
+    }
+    
+}
+
+a.nav-title.navbar-brand {
+    @include breakpoint(mobile) {
+        color: $bs-cyan;
+    }
+    @include breakpoint(phablet) {
+        color: $bs-cyan;
+    }
+    @include breakpoint(tablet) {
+        color: $bs-pink;
+    }
+    
+}
+
+.form {
+    @include breakpoint(mobile) {
+        margin: 0 1rem;
+        border-radius: 1rem;
+    }
+    @include breakpoint(phablet) {
+        margin: 0 1rem;
+        border-radius: 1rem;
+    }
+    &__container {
+        @include breakpoint(mobile) {
+            background-color: $bs-cyan;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding-top: 1rem;
+            padding-bottom: 2rem;
+        }
+        @include breakpoint(phablet) {
+            background-color: $bs-cyan;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding-top: 1rem;
+            padding-bottom: 2rem;
+        }
+        @include breakpoint(tablet) {
+            background-color: $bs-pink;
+        }
+        @include breakpoint(desktop) {
+            background-color: $bs-teal;
+        }
+
+        
+        &__content {
+            &--flname {
+                @include breakpoint(mobile) {
+                    display: flex;
+                    flex-direction: column;
+                    margin: 0;       
+                }
+                @include breakpoint(phablet) {
+                    display: flex;
+                    flex-direction: column;
+                    margin: 0;       
+                }
+                @include breakpoint(tablet) {
+                    display: flex;
+                    flex-direction: row;
+                }
+                @include breakpoint(desktop) {
+                    display: flex;
+                    flex-direction: row;
+                }
+            }
+        }
+    }
+}
+
+div.col-md-7.col-lg-8.form__container {
+    @include breakpoint(phablet) {
+        width: 100%;
+    }
+}
+
+.row.g-3 {
+    @include breakpoint(mobile){
+        margin: 0;
+    }
+    @include breakpoint(phablet){
+        margin: 0;
+    }
+}
+
+.mb-3 {
+    @include breakpoint(mobile){
+        margin: 0;
+        padding: 0 0.5rem;
+    }
+    @include breakpoint(phablet){
+        margin: 0;
+        padding: 0 0.5rem;
+    }
+}
+
+fieldset {
+    @include breakpoint(mobile) {
+        margin: 0 auto;
+        padding: 2rem;
+        width: 100%;
+    }
+    @include breakpoint(phablet) {
+        margin: 0 auto;
+        padding: 2rem;
+        width: 100%;
+    }
+}
+
+.col {
+    @include breakpoint(mobile) {
+        margin: 0 1rem;
+    }
+    @include breakpoint(phablet) {
+        margin: 0 1rem;
+    }
+}
+
+.button-ctn {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+button#submit.btn.btn-primary.btn-lg {
+    @include breakpoint(mobile) {
+        background-color: $bs-pink;
+        border: none; 
+    }
+    @include breakpoint(phablet) {
+        background-color: $bs-pink;
+        border: none;
+    }
+    @include breakpoint(tablet) {
+        background-color: $bs-cyan;
+        border: none;
+    }
+    @include breakpoint(desktop) {
+        background-color: $bs-danger;
+        border: none;
+    }
+}
+
+footer {
+    padding-bottom: 2rem;
+    @include breakpoint(mobile) {
+        margin-top: 0;
+        margin-bottom: 0;
+    }
+    @include breakpoint(phablet) {
+        margin-top: 0;
+        margin-bottom: 0;
+    }
+}
+
+.list-inline {
+    margin-bottom: 0;
+}
+
+.mb-1 {
+    @include breakpoint(mobile) {
+        color: $bs-cyan;
+    }
+    @include breakpoint(phablet) {
+        color: $bs-cyan;
+    }
+    @include breakpoint(tablet) {
+        color: $bs-pink;
+    }
+}
+
+
+

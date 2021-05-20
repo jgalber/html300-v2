@@ -1,15 +1,283 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-        <link rel="stylesheet" href="css/style.css" />
-        <title>Assignment 06 - Bootstrap 4</title>
-    </head>
-    <body>
-        <main class="main">
-          
-        </main>
-    </body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" href="./css/style.css" />
+    
+    <title>Assignment 06 - Bootstrap 5</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+  </head>
+<body>
+<main class="main">
+      <!-- Header -->
+  <div class="container">
+    <nav class="container__navbar navbar-expand-lg navbar-light bg-light rounded" aria-label="Eleventh navbar example">
+      <div class="container-fluid">
+            <a class="nav-title navbar-brand" href="#">Travel Advisor</a>
+              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarsExample09" aria-controls="navbarsExample09" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+            
+          <div class="collapse navbar-collapse" id="navbarsExample09">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="#">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Link</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+              </li>
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="dropdown09" data-bs-toggle="dropdown" aria-expanded="false">Dropdown</a>
+                  <ul class="dropdown-menu" aria-labelledby="dropdown09">
+                    <li><a class="dropdown-item" href="#">About Us</a></li>
+                    <li><a class="dropdown-item" href="#">Destinations</a></li>
+                    <li><a class="dropdown-item" href="#">Contact</a></li>
+                  </ul>
+              </li>
+            </ul>
+          </div>
+      </div>
+    </nav>
+        
+    <div class="bg-light form">
+      <div class="py-5 text-center">
+        <h2>Traveller Survey</h2>
+      </div>
+      <div class="col-md-7 col-lg-8 form__container" style="margin: 0 auto;">
+        <h4 class="mb-3">Are You a Travel Advisor?</h4>
+        <form class="needs-validation form__container__content">
+          <div class="mb-3 form__container__content--flname">
+            <div class="col">
+              <label for="firstName" class="form-label">First name</label>
+              <input type="text" class="form-control" id="firstName" placeholder="First name" aria-label="First name" value="" required>
+            </div>
+            <div class="col">
+              <label for="lastName" class="form-label">Last name</label>
+              <input type="text" class="form-control" id="lastName" placeholder="Last name" aria-label="Last name" value="" required>
+            </div>
+          </div>
+
+          <!-- address -->
+          <div class="row g-3">  
+            <div class="col-12">
+              <label for="inputAddress2" class="form-label">Address</label>
+              <input type="text" class="form-control" id="inputAddress" placeholder="Apartment, studio, or floor" required>
+            </div>
+            <div class="col-md-6">
+              <label for="inputCity" class="form-label">City</label>
+              <input type="text" class="form-control" id="inputCity" placeholder="Seattle" required>
+            </div>
+            <div class="col-md-4">
+              <label for="inputState" class="form-label">State</label>
+              <select id="inputState" class="form-select" id="state" required>
+                    <option selected>Choose...</option>
+                    <option value="Alabama">AL</option>
+                    <option value="Alaska">AK</option>
+                    <option value="Arizona">AZ</option>
+                    <option value="Arkansas">AR</option>
+                    <option value="California">CA</option>
+                    <option value="Colorado">CO</option>
+                    <option value="Connecticut">CT</option>
+                    <option value="Delaware">DE</option>
+                    <option value="Florida">FL</option>
+                    <option value="Georgia">GA</option>
+                    <option value="Hawaii">HI</option>
+                    <option value="Idaho">ID</option>
+                    <option value="Illinois">IL</option>
+                    <option value="Indiana">IN</option>
+                    <option value="Iowa">IA</option>
+                    <option value="Kansas">KS</option>
+                    <option value="Kentucky">KY</option>
+                    <option value="Louisiana">LA</option>
+                    <option value="Maine">ME</option>
+                    <option value="Maryland">MD</option>
+                    <option value="Massachusetts">MA</option>
+                    <option value="Michigan">MI</option>
+                    <option value="Minnesota">MN</option>
+                    <option value="Mississippi">MS</option>
+                    <option value="Missouri">MO</option>
+                    <option value="Montana">MT</option>
+                    <option value="Nebraska">NE</option>
+                    <option value="Nevada">NV</option>
+                    <option value="News Hampshire">NH</option>
+                    <option value="New Jersey">NJ</option>    
+                    <option value="New Mexico">NM</option>
+                    <option value="New York">NY</option>
+                    <option value="North Carolina">NC</option>
+                    <option value="North Dakota">ND</option>
+                    <option value="Ohio">OH</option>
+                    <option value="Oklahoma">OK</option>
+                    <option value="Oregon">OR</option>
+                    <option value="Pennsylvania">PA</option>
+                    <option value="Rhode Island">RI</option>
+                    <option value="South Carolina">SC</option>
+                    <option value="South Dakota">SD</option>
+                    <option value="Tennessee">TN</option>
+                    <option value="Texas">TX</option>
+                    <option value="Utah">UT</option>
+                    <option value="Vermont">VT</option>
+                    <option value="Virgina">VA</option>
+                    <option value="Washington">WA</option>
+                    <option value="West Virginia">WV</option>
+                    <option value="Wisconsin">WI</option>
+                    <option value="Wyoming">WY</option>
+              </select>
+            </div>
+            <div class="col-md-2">
+              <label for="inputZip" class="form-label">Zip</label>
+              <input type="text" class="form-control" id="inputZip" placeholder="98101">
+            </div>
+            <div class="mb-3">
+              <label for="email" class="form-label">Email address</label>
+              <input type="email" class="form-control" id="email" placeholder="name@example.com">
+            </div>
+          </div> 
+
+          <!-- Disable -->
+          <div class="row mb-3">
+            <div class="col">
+              <input class="form-control" type="text" placeholder="Age" aria-label="Age not required" disabled>
+            </div>
+            <div class="col">
+              <input class="form-control" type="text" placeholder="Gender" aria-label="Gender not required" disabled readonly>
+            </div>             
+            <div class="col">
+              <input class="form-control" type="text" placeholder="Ethnicity" aria-label="Ethnicity not required" disabled readonly>
+            </div>
+          </div>
+
+          <div class="mb-3">
+            <select class="form-select" aria-label="Default select example" id="season">
+              <option selected>What's your favorite season for travelling?</option>
+              <option value="winter">Winter</option>
+              <option value="spring">Spring</option>
+              <option value="summer">Summer</option>
+              <option value="fall">Fall</option>
+            </select>
+          </div> 
+
+          <fieldset class="fielset row mb-3">
+            <legend class="col-form-label col-sm-2 pt-0">Your Favorite Global Destination</legend>
+            <div class="col-sm-10">
+              <div class="form-check">
+                <input class="form-check-input" type="radio" name="gridRadios" id="africa" value="Africa" checked>
+                <label class="form-check-label" for="africa">Africa</label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input" type="radio" name="gridRadios" id="america" value="America">
+                <label class="form-check-label" for="america">America</label>
+              </div>
+              <div class="form-check disabled">
+                <input class="form-check-input" type="radio" name="gridRadios" id="antarctica" value="option3" disabled>
+                <label class="form-check-label" for="antarctica">Antarctica</label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input" type="radio" name="gridRadios" id="asia" value="Asia">
+                <label class="form-check-label" for="asia">Asia</label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input" type="radio" name="gridRadios" id="australia" value="Australia">
+                <label class="form-check-label" for="australia">Australia / Oceania</label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input" type="radio" name="gridRadios" id="europe" value="Europe">
+                <label class="form-check-label" for="europe">Europe</label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input" type="radio" name="gridRadios" id="outS" value="Outer Space">
+                <label class="form-check-label" for="outS">OutS</label>
+              </div>
+            </div>
+          </fieldset>
+
+
+          <div class="mb-3">
+            <label for="inputState" class="form-label">Trip Preference:</label>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input" type="checkbox" id="nature" value="Nature">
+              <label class="form-check-label" for="nature">Nature</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input" type="checkbox" id="culture" value="Cultural">
+              <label class="form-check-label" for="culture">Cultural</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input" type="checkbox" id="adventure" value="Adventure">
+              <label class="form-check-label" for="adventure">Adventure</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input" type="checkbox" id="relax" value="Relax">
+              <label class="form-check-label" for="relax">Relax</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input" type="checkbox" id="business" value="Business">
+              <label class="form-check-label" for="business">Business</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input" type="checkbox" id="inlineCheckbox6" value="option6" disabled>
+              <label class="form-check-label" for="inlineCheckbox6">None of them</label>
+            </div>
+          </div>
+
+          <hr class="my-4">
+
+          <div class="mb-3">  
+            <label for="inputState" class="form-label">Accomodation:</label>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input" type="checkbox" id="airbnb" value="Airbnb">
+              <label class="form-check-label" for="airbnb">Airbnb</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input" type="checkbox" id="hotel" value="Hotel">
+              <label class="form-check-label" for="hotel">Hotel</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input" type="checkbox" id="bAb" value="B&B">
+              <label class="form-check-label" for="bAb">B&B</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input" type="checkbox" id="resort" value="Resort">
+              <label class="form-check-label" for="resort">Resort</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input" type="checkbox" id="outdoors" value="Outdoors">
+              <label class="form-check-label" for="outdoors">Outdoors</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input" type="checkbox" id="inlineCheckbox6" value="option6" disabled>
+              <label class="form-check-label" for="inlineCheckbox6">None of them</label>
+            </div>
+          </div>
+
+          <div class="mb-3">
+            <div class="form-floating">
+              <textarea class="form-control" placeholder="Leave a comment here" id="floatingtextarea"></textarea>
+              <label for="floatingTextarea">Comments</label>
+            </div>
+          </div>
+
+          <div class="col button-ctn">
+            <button class="btn btn-primary btn-lg" type="submit" id="submit">Submit</button>
+          </div>
+        </form>
+      </div>
+      <footer class="pt-5 text-center text-small">
+              <p class="mb-1">&copy; 2017–2021 Company Name</p>
+              <ul class="list-inline">
+                <li class="list-inline-item"><a href="#">Privacy</a></li>
+                <li class="list-inline-item"><a href="#">Terms</a></li>
+                <li class="list-inline-item"><a href="#">Support</a></li>
+              </ul>
+            </footer>
+   
+  </div>          
+</main>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
+    <script src="form-validation.js"></script>
+</body>
 </html>
