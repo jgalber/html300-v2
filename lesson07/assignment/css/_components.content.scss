@@ -105,6 +105,7 @@ a.nav-title.navbar-brand {
     
 }
 
+
 .form {
     @include breakpoint(mobile) {
         margin: 0 1rem;
@@ -188,6 +189,10 @@ div.col-md-7.col-lg-8.form__container {
         margin: 0;
         padding: 0 0.5rem;
     }
+}
+
+h4.mb-3 {
+    text-align: center;
 }
 
 fieldset {
